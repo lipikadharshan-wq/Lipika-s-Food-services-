@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Order Food | Lipika's Food & Services</title>
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<header>
+    <nav>
+        <h1>🍽 Lipika's Food & Services</h1>
+        <ul>
+            <li><a href="index.html">Home</a></li>
+            <li><a href="menu.html">Menu</a></li>
+            <li><a href="about.html">About</a></li>
+            <li><a href="chefs.html">Chefs</a></li>
+            <li><a href="achievements.html">Achievements</a></li>
+            <li><a href="contact.html">Contact</a></li>
+        </ul>
+    </nav>
+</header>
+
+<section class="order-section">
+
+    <h2>🍴 Online Food Ordering</h2>
+    <p>Select your favourite dishes and place your order.</p>
+
+    <div class="order-container">
+
+        <div class="food-item">
+            <h3>Chicken Biryani</h3>
+            <p>₹250</p>
+            <button onclick="addToCart('Chicken Biryani',250)">Add to Cart</button>
+        </div>
+
+        <div class="food-item">
+            <h3>Butter Chicken</h3>
+            <p>₹280</p>
+            <button onclick="addToCart('Butter Chicken',280)">Add to Cart</button>
+        </div>
+
+        <div class="food-item">
+            <h3>Paneer Tikka</h3>
+            <p>₹220</p>
+            <button onclick="addToCart('Paneer Tikka',220)">Add to Cart</button>
+        </div>
+
+        <div class="food-item">
+            <h3>Margherita Pizza</h3>
+            <p>₹350</p>
+            <button onclick="addToCart('Pizza',350)">Add to Cart</button>
+        </div>
+
+        <div class="food-item">
+            <h3>Chinese Noodles</h3>
+            <p>₹180</p>
+            <button onclick="addToCart('Noodles',180)">Add to Cart</button>
+        </div>
+
+        <div class="food-item">
+            <h3>Chocolate Cake</h3>
+            <p>₹150</p>
+            <button onclick="addToCart('Chocolate Cake',150)">Add to Cart</button>
+        </div>
+
+    </div>
+
+</section>
+
+<section class="cart-section">
+
+    <h2>🛒 Your Cart</h2>
+
+    <ul id="cartItems"></ul>
+
+    <h3>Total: ₹<span id="total">0</span></h3>
+
+</section>
+
+<section class="customer-details">
+
+    <h2>📦 Delivery Details</h2>
+
+    <form onsubmit="placeOrder(event)">
+
+        <input type="text" placeholder="Full Name" required>
+
+        <input type="tel" placeholder="Phone Number" required>
+
+        <textarea placeholder="Delivery Address" required></textarea>
+
+        <button type="submit">Place Order</button>
+
+    </form>
+
+</section>
+
+<footer>
+    <p>© 2026 Lipika's Food & Services</p>
+</footer>
+
+<script>
+
+let total = 0;
+
+function addToCart(item, price){
+
+    let cart = document.getElementById("cartItems");
+
+    let li = document.createElement("li");
+
+    li.innerHTML = item + " - ₹" + price;
+
+    cart.appendChild(li);
+
+    total += price;
+
+    document.getElementById("total").innerText = total;
+}
+
+function placeOrder(event){
+
+    event.preventDefault();
+
+    alert("🎉 Order Placed Successfully!\nThank You For Ordering From Lipika's Food & Services.");
+
+}
+
+</script>
+
+</body>
+</html>
