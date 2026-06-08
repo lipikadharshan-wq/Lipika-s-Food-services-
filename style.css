@@ -1,89 +1,228 @@
-/* Google Font */
-@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&display=swap');
-
 *{
-margin:0;
-padding:0;
-box-sizing:border-box;
-font-family:'Poppins',sans-serif;
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+    font-family:Arial,sans-serif;
 }
 
 body{
-background:linear-gradient(135deg,#000000,#001f3f,#003366);
-color:white;
-overflow-x:hidden;
+    background:#050b18;
+    color:white;
+    line-height:1.5;
 }
 
-/* Navbar */
+/* NAVBAR */
 
-.navbar{
-display:flex;
-justify-content:space-between;
-align-items:center;
-padding:20px 8%;
-background:rgba(0,0,0,0.8);
-backdrop-filter:blur(10px);
-position:sticky;
-top:0;
-z-index:1000;
+nav{
+    background:#0b132b;
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+    padding:12px 20px;
+    flex-wrap:wrap;
 }
 
-.logo{
-font-size:28px;
-font-weight:700;
-color:gold;
-text-shadow:0 0 10px gold;
+nav h1{
+    color:gold;
+    font-size:1.4rem;
 }
 
-.nav-links{
-display:flex;
-list-style:none;
-gap:20px;
+nav ul{
+    list-style:none;
+    display:flex;
+    gap:12px;
+    flex-wrap:wrap;
 }
 
-.nav-links a{
-text-decoration:none;
-color:white;
-font-weight:500;
-transition:0.3s;
+nav ul li a{
+    color:white;
+    text-decoration:none;
+    font-size:14px;
+    transition:.3s;
 }
 
-.nav-links a:hover{
-color:gold;
+nav ul li a:hover{
+    color:gold;
 }
 
-/* Hero Section */
+/* BANNERS */
 
-.hero{
-height:100vh;
-background:
-linear-gradient(rgba(0,0,0,0.5),
-rgba(0,0,0,0.5)),
-url("https://images.unsplash.com/photo-1517248135467-4c7edcad34c4?w=1600");
-background-size:cover;
-background-position:center;
-display:flex;
-justify-content:center;
-align-items:center;
-text-align:center;
-padding:20px;
+.hero,
+.about-banner,
+.contact-banner,
+.gallery-banner,
+.chef-banner,
+.achievement-banner{
+    text-align:center;
+    padding:40px 15px;
 }
 
-.hero-content{
-max-width:800px;
-background:rgba(255,255,255,0.08);
-padding:40px;
-border-radius:20px;
-backdrop-filter:blur(10px);
+.hero h1,
+.about-banner h2,
+.contact-banner h2,
+.gallery-banner h2,
+.chef-banner h2,
+.achievement-banner h2{
+    font-size:2rem;
+    color:gold;
+    margin-bottom:10px;
 }
 
-.hero h1{
-font-size:60px;
-color:gold;
-margin-bottom
-  .gallery-item img{
+.hero p,
+.about-banner p,
+.contact-banner p,
+.gallery-banner p,
+.chef-banner p,
+.achievement-banner p{
+    font-size:14px;
+}
+
+/* CARDS */
+
+.food-item,
+.chef-card,
+.achievement-card,
+.gallery-item,
+.feature,
+.stat-box{
+    background:#111827;
+    border-radius:12px;
+    padding:12px;
+    text-align:center;
+    box-shadow:0 0 10px rgba(0,0,0,.3);
+}
+
+/* GRID */
+
+.gallery-container,
+.chef-container,
+.achievement-gallery,
+.features,
+.stats-container,
+.order-container{
+    display:grid;
+    grid-template-columns:repeat(auto-fit,minmax(180px,1fr));
+    gap:15px;
+    padding:20px;
+}
+
+/* IMAGES */
+
+.gallery-item img,
+.chef-card img,
+.achievement-card img,
+.about-card img{
     width:100%;
-    height:120px;
+    height:140px;
     object-fit:cover;
     border-radius:10px;
-  }
+}
+
+/* ABOUT SECTION */
+
+.about-content{
+    padding:20px;
+}
+
+.about-card{
+    background:#111827;
+    border-radius:12px;
+    overflow:hidden;
+    margin-bottom:20px;
+}
+
+.about-card div{
+    padding:15px;
+}
+
+.about-card h2{
+    color:gold;
+    margin-bottom:10px;
+    font-size:1.3rem;
+}
+
+/* ORDER */
+
+.food-item h3{
+    font-size:1rem;
+    margin-bottom:8px;
+}
+
+button{
+    background:gold;
+    color:black;
+    border:none;
+    padding:8px 15px;
+    border-radius:6px;
+    cursor:pointer;
+    font-weight:bold;
+    margin-top:8px;
+}
+
+button:hover{
+    opacity:.9;
+}
+
+/* FORMS */
+
+input,
+textarea{
+    width:100%;
+    padding:10px;
+    margin:8px 0;
+    border:none;
+    border-radius:6px;
+}
+
+.contact-form,
+.customer-details{
+    padding:20px;
+}
+
+/* FOOTER */
+
+footer{
+    background:#0b132b;
+    text-align:center;
+    padding:20px;
+    margin-top:20px;
+}
+
+footer h3{
+    color:gold;
+    margin-bottom:10px;
+}
+
+/* MOBILE */
+
+@media(max-width:768px){
+
+    nav{
+        flex-direction:column;
+        gap:10px;
+    }
+
+    nav h1{
+        font-size:1.2rem;
+    }
+
+    nav ul{
+        justify-content:center;
+    }
+
+    .hero h1,
+    .about-banner h2,
+    .contact-banner h2,
+    .gallery-banner h2,
+    .chef-banner h2,
+    .achievement-banner h2{
+        font-size:1.6rem;
+    }
+
+    .gallery-item img,
+    .chef-card img,
+    .achievement-card img,
+    .about-card img{
+        height:120px;
+    }
+}
